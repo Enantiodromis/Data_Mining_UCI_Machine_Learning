@@ -14,7 +14,7 @@ def data_information_gathering(data_frame):
     
     num_instance = len(data_frame)
     num_instances_missing_values = sum([True for idx,row in data_frame.iterrows() if any(row.isnull())])
-    frac_missing_instances = frac(num_missing_values, num_instance)
+    frac_missing_instances = frac(num_instances_missing_values, num_instance)
 
     # Formatting information into a PrettyTable
     table = PrettyTable()

@@ -1,4 +1,5 @@
 from data_information import read_data, data_information_gathering
+from multi_column_label_encoder import cols_encoding
 
 # Creating a table stating the following information about the adult dataset:
 # - number of instances
@@ -11,4 +12,9 @@ df = read_data("data/adult.csv", data_cols)
 data_information_gathering(df)
 
 # Using Scikit-learn LabelEncoder converting the 13 attributes to nominal and printing the set of all discrete
-# values for each attribute. 
+# values for each attribute.
+cols_encoding(df, data_cols)
+
+
+
+     
