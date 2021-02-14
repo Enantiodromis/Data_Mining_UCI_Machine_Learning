@@ -3,18 +3,18 @@ import numpy as np
 from fractions import Fraction as frac
 from prettytable import PrettyTable
 
-def read_data(data_path, data_cols):
+def read_data(data_path, data_cols, excluded_columns = ''):
     df = pd.read_csv(data_path, usecols=data_cols)
     return df
 
 def data_information_gathering(data_frame):
     num_missing_values = sum(data_frame.isnull().values.ravel())
     total_values = data_frame.size
-    frac_missing_values = frac(num_missing_values, total_values)
-    
+    frac_missing_values = num_missing_values / total_values
     num_instance = len(data_frame)
-    num_instances_missing_values = sum([True for idx,row in data_frame.iterrows() if any(row.isnull())])
-    frac_missing_instances = frac(num_instances_missing_values, num_instance)
+    num_values = data_frame.count(1)
+    num_instances_missing_values = (num_values < len(data_frame.columns)).sum()
+    frac_missing_instances = num_instances_missing_values / num_instance
 
     # Formatting information into a PrettyTable
     table = PrettyTable()
