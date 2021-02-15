@@ -4,7 +4,6 @@ from sklearn.model_selection import train_test_split
 from sklearn import tree
 from sklearn.metrics import confusion_matrix
 from multi_label_encoder import cols_encoding, x_y_encoding
-import graphviz
 
 #def create_decision_tree(data_frame, predicted_attribute, index_of_attribute):
 def create_decision_tree(data_frame, target_column):
@@ -40,7 +39,7 @@ def create_decision_tree(data_frame, target_column):
     print("Out of " + str(len_test_data) + " values, " + str(count) + " were correctly predicted, resulting in " + str(score) + "%" + " accuracy")
  
     # DISPLAY THE DECISION TREE
-    decision_path = clf.decision_path(X)
-    print(decision_path)
+    #decision_path = clf.decision_path(X)
+    #print(decision_path)
 
     

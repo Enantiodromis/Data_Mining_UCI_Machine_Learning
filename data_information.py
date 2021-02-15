@@ -5,7 +5,11 @@ from prettytable import PrettyTable
 
 def read_data(data_path, data_cols, excluded_columns = ''):
     df = pd.read_csv(data_path, usecols=data_cols)
-    return df
+    if len(excluded_columns):
+        df_dropped = df.drop([excluded_columns], axis = 1)
+        return df, df_dropped
+    else:
+        return df
 
 def data_information_gathering(data_frame):
     num_missing_values = sum(data_frame.isnull().values.ravel())
