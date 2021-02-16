@@ -30,3 +30,17 @@ def data_information_gathering(data_frame):
     table.add_row(["Number of instances with missing values:", num_instances_missing_values])
     table.add_row(["Fraction of instances with missing values over all instances:", frac_missing_instances])
     print(table)
+
+def mean_and_ranges_df(data_frame):
+    table = PrettyTable()
+    table.field_names = ["COLUMN","MEAN","MIN","MAX"]
+    table.align["COLUMN"] = "l"
+    table.align["MEAN"] = "c"
+    table.align["MIN"] = "c"
+    table.align["MAX"] = "c"
+    for col in data_frame.columns:
+        col_mean = round(data_frame[col].mean(),2)
+        col_max = data_frame[col].max()
+        col_min = data_frame[col].min()
+        table.add_row([col, col_mean, col_min, col_max])
+    print(table)

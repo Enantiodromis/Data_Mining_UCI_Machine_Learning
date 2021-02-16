@@ -20,10 +20,8 @@ def add_random_df(data_frame1, data_frame2, amount = 0):
 def populate_df_na_val(data_frame, fill_value = "", mode = False):
     data_frame_fill = data_frame.copy()
     if mode == False and len(fill_value) > 0:
-        print("triggered missing")
         data_frame_fill.fillna(fill_value, inplace=True)
     else:
-        print("triggered mode")
         columns = data_frame_fill.columns
         for column in data_frame_fill.columns:
             data_frame_fill[column] = data_frame_fill[column].fillna(data_frame_fill[column].mode().iat[0])
