@@ -2,6 +2,7 @@ from data_information import read_data, data_information_gathering, mean_and_ran
 from multi_label_encoder import cols_encoding
 from decision_tree_classifier import create_decision_tree
 from df_manipulation import missing_val_df_split, add_random_df, populate_df_na_val
+from k_means import k_means_pairs_run
 
 # Creating a table stating the following information about the adult dataset:
 # - number of instances
@@ -60,12 +61,12 @@ mean_and_ranges_df(df_1)
 # Run K-means with k=3 and constrcut a scatterplot for each pair of attributes using Pyplot. Therefore, 15 scatter plots should be constructed in total.
 # Different clusters should appear with different colors in the scatter plot. All scatter plots should be included in the report, using no more than two 
 # pages for them. What do you observe?
-
+k_means_pairs_run(df_1, 3)
 
 # Run k-means for each possible value of k in the set {3,5,10}. Complete the following table with the between cluster distance BC, within cluster distance WC
 # and ration BC/WC of the set of clusters obtained for each K. Briefly commment on the obtained results.
 
-
+ 
 
 
 
