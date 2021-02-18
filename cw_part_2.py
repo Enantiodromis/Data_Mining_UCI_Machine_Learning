@@ -1,9 +1,16 @@
+# AUTHOR: GEORGE BRADLEY
+# LAST EDIT: 18/02/2021
+# TITLE: CW_PART_2.PY
+
 import numpy as np
 import pandas as pd
 from prettytable import PrettyTable
 import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 from sklearn.metrics.pairwise import euclidean_distances
+import warnings
+import matplotlib.cbook
+warnings.filterwarnings("ignore",category=matplotlib.cbook.mplDeprecation)
 
 # The read_data() function reads in csv and outputs a dataframe.
 # Additionally a df with a specific column dropped can also be created.
