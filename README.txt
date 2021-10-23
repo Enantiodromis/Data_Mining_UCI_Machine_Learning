@@ -57,7 +57,7 @@
 	Function: Filling missing values withing a dataframe with a specified value or with the mode value
 
 #####################################################################################
-####################### FILE NAME: wholesale_data.py #####################################
+####################### FILE NAME: wholesale_data.py ################################
 #####################################################################################
 1. read_data(data_path, data_cols, excluded_columns = '')
 	Inputs: datapath, list of strings, string
